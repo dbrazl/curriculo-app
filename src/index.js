@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-native-gesture-handler';
-import { View, StatusBar } from 'react-native';
+import { View } from 'react-native';
 
 import './config/ReactotronConfig';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -14,11 +14,6 @@ export default function Index() {
     return (
         <Provider store={store}>
             <PersistGate persistor={persistor}>
-                <StatusBar
-                    translucent
-                    barStyle="light-content"
-                    backgroundColor="transparent"
-                />
                 <App />
                 <View />
             </PersistGate>
