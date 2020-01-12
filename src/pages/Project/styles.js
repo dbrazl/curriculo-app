@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
 import { RectButton } from 'react-native-gesture-handler';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -21,7 +21,7 @@ export const Scroll = styled.ScrollView.attrs({
 
 export const BackButton = styled(RectButton)`
     position: relative;
-    top: 100;
+    top: ${Platform.OS === 'ios' ? 100 : 50};
     left: 20;
     width: 50px;
     height: 50px;
@@ -36,7 +36,7 @@ export const Content = styled.View`
 `;
 
 export const Profile = styled.View`
-    margin-top: 150px;
+    margin-top: ${Platform.OS === 'ios' ? '150' : '100'}px;
     justify-content: center;
     align-items: center;
 `;
@@ -75,6 +75,7 @@ export const Label = styled.Text.attrs({
 export const InfoJob = styled.View`
     width: ${width};
     padding: 0 20px;
+    margin-bottom: 20px;
 `;
 
 export const Job = styled.Text.attrs({

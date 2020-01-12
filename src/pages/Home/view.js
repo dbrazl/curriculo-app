@@ -33,17 +33,17 @@ export default function View({ viewProps }) {
 
     goToJob = item => {
         setEntry(false);
-        timeout[0] = setTimeout(() => navigateToJob(item), 500);
+        timeout[0] = setTimeout(() => navigateToJob(item), 600);
     };
 
     goToGraduate = item => {
         setEntry(false);
-        timeout[0] = setTimeout(() => navigateToGraduate(item), 500);
+        timeout[0] = setTimeout(() => navigateToGraduate(item), 600);
     };
 
     goToProject = item => {
         setEntry(false);
-        timeout[0] = setTimeout(() => navigateToProject(item), 500);
+        timeout[0] = setTimeout(() => navigateToProject(item), 600);
     };
 
     useEffect(() => {

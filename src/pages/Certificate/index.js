@@ -42,8 +42,6 @@ export default function Model({ navigation }) {
         return null;
     };
 
-    console.tron.log('fn', selectMock());
-
     goBack = () => {
         timeout[0] = setTimeout(() => dispatch(resetRequest()), 500);
         navigation.navigate('Home');

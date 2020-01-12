@@ -41,7 +41,10 @@ export default function View({ viewProps }) {
     }, []);
 
     return (
-        <Container animation={entry ? entryAnimation : outAnimation}>
+        <Container
+            animation={entry ? entryAnimation : outAnimation}
+            duration={500}
+        >
             <Scroll>
                 <BackButton onPress={goToHome}>
                     <Icon name="arrow-left" size={50} color="#000" />

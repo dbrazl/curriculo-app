@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 
-import { transition } from './transitions';
+import { transition, transitionIntern } from './transitions';
 
 // Pages
 import Entry from '../pages/Entry';
@@ -15,11 +15,13 @@ navigation = () =>
     createAnimatedSwitchNavigator(
         {
             Entry,
-            Home,
-            Job,
-            Graduate,
-            Project,
-            Certificate,
+            App: createAnimatedSwitchNavigator({
+                Home,
+                Job,
+                Graduate,
+                Project,
+                Certificate,
+            }),
         },
         {
             initialRouteName: 'Entry',

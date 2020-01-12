@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
+import { Platform } from 'react-native';
 
 export const Container = styled(Animatable.View).attrs(props => ({
     animation: props.animation,
@@ -17,7 +18,7 @@ export const Scroll = styled.ScrollView.attrs({
 export const Profile = styled.View`
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: ${Platform.OS === 'ios' ? '150' : '100'}px;
     margin-bottom: 30px;
 `;
 
