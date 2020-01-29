@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BackHandler } from 'react-native';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { resetRequest } from '../../store/modules/itemList/actions';
@@ -27,10 +28,17 @@ export default function Model({ navigation }) {
     goBack = () => {
         timeout[0] = setTimeout(() => dispatch(resetRequest()), 500);
         navigation.navigate('Home');
+        return true;
     };
 
     useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', goBack);
+    }, []);
+
+    useEffect(() => {
         return () => {
+            BackHandler.removeEventListener('hardwareBackPress', goBack);
+
             timeout.forEach(element => clearTimeout(element));
         };
     }, []);

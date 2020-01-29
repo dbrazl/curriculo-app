@@ -55,4 +55,8 @@ export default skillsTI = [
         id: 14,
         info: 'JQuery',
     },
+    {
+        id: 15,
+        info: 'Python',
+    },
 ];
